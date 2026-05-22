@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Postseason Tap List: Playoff Beer Prices Ranked</title>
+</head>
+<body>
+
+<section class="an-playoff-beer">
+<style>
+.an-playoff-beer,
+.an-playoff-beer *{
+  box-sizing:border-box;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
+
+.an-playoff-beer{
+  max-width:860px;
+  margin:32px auto;
+  background:#fff;
+  border:1px solid #E4ECF4;
+  border-radius:14px;
+  color:#101820;
+  box-shadow:0 1px 2px rgba(0,0,0,.04),0 10px 22px rgba(16,80,120,.08);
+}
+
+.an-playoff-beer .chart-head{
+  padding:22px 24px 16px;
+  border-bottom:1px solid #E4ECF4;
+}
+
+.an-playoff-beer h2{
+  margin:0 0 6px;
+  font-size:28px;
+  line-height:1.15;
+  font-weight:900;
+  letter-spacing:-0.4px;
+}
+
+.an-playoff-beer .subtitle{
+  margin:0;
+  color:#5E6B7A;
+  font-size:14px;
+  line-height:1.45;
+}
+
+.an-playoff-beer .green-rule{
+  width:72px;
+  height:4px;
+  margin-top:14px;
+  background:#00B050;
+}
+
+.an-playoff-beer .table-head,
+.an-playoff-beer .row{
+  display:grid;
+  grid-template-columns:42px 42px 220px 1fr 90px 110px;
+  align-items:center;
+}
+
+.an-playoff-beer .table-head{
+  background:#00150F;
+  color:#fff;
+  font-size:11px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+}
+
+.an-playoff-beer .table-head div{
+  padding:12px 10px;
+  border-right:1px solid rgba(255,255,255,.15);
+}
+
+.an-playoff-beer .table-head div:last-child{
+  border-right:none;
+}
+
+.an-playoff-beer .rows{
+  background:#fff;
+}
+
+.an-playoff-beer .row{
+  min-height:56px;
+  border-bottom:1px solid #E5ECE7;
+}
+
+.an-playoff-beer .row > div{
+  padding:8px 10px;
+}
+
+.an-playoff-beer .rank{
+  text-align:center;
+  color:#00B050;
+  font-weight:900;
+  font-size:15px;
+}
+
+.an-playoff-beer .logo img{
+  width:28px;
+  height:28px;
+  object-fit:contain;
+  display:block;
+}
+
+.an-playoff-beer .team{
+  font-weight:800;
+  font-size:14px;
+  line-height:1.2;
+}
+
+.an-playoff-beer .arena{
+  display:block;
+  margin-top:2px;
+  color:#6E7480;
+  font-size:12px;
+  font-weight:500;
+}
+
+.an-playoff-beer .bar-track{
+  height:16px;
+  background:#EFF5F0;
+  border-radius:3px;
+  overflow:hidden;
+}
+
+.an-playoff-beer .bar{
+  height:100%;
+  background:#00B050;
+}
+
+.an-playoff-beer .price,
+.an-playoff-beer .two{
+  text-align:right;
+  font-weight:800;
+  font-variant-numeric:tabular-nums;
+}
+
+.an-playoff-beer .method{
+  margin:16px 20px 0;
+  padding:12px 14px;
+  background:#F4FAF5;
+  border-left:4px solid #00B050;
+  color:#344255;
+  font-size:13px;
+  line-height:1.45;
+}
+
+.an-playoff-beer .footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  padding:14px 20px 18px;
+  color:#7A8594;
+  font-size:11px;
+}
+
+.an-playoff-beer .brand img{
+  height:34px;
+  width:auto;
+  display:block;
+}
+
+@media(max-width:760px){
+  .an-playoff-beer .table-head{
+    display:none;
+  }
+
+  .an-playoff-beer .row{
+    grid-template-columns:32px 34px 1fr 80px;
+    gap:6px;
+  }
+
+  .an-playoff-beer .bar-wrap{
+    grid-column:3 / 5;
+    padding-top:0;
+  }
+
+  .an-playoff-beer .two{
+    display:none;
+  }
+
+  .an-playoff-beer h2{
+    font-size:22px;
+  }
+
+  .an-playoff-beer .footer{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .an-playoff-beer .brand img{
+    height:28px;
+  }
+}
+</style>
+
+<div class="chart-head">
+  <h2>The Postseason Tap List: Playoff Beer Prices Ranked</h2>
+  <p class="subtitle">
+    Projected 16-ounce playoff beer prices across the NBA playoff field.
+  </p>
+  <div class="green-rule"></div>
+</div>
+
+<div class="table-head">
+  <div>#</div>
+  <div></div>
+  <div>Team / Arena</div>
+  <div>Playoff Price (16 oz)</div>
+  <div>Beer</div>
+  <div>Two Beers</div>
+</div>
+
+<div class="rows" id="beerRows"></div>
+
+<div class="method">
+  <strong>Methodology:</strong>
+  Beer prices were standardized to a 16-ounce serving size. Because official
+  playoff concession pricing is rarely disclosed, projected playoff prices apply
+  a uniform 15% postseason premium to regular-season concession prices to
+  account for increased demand and the removal of regular-season promotional pricing.
+</div>
+
+<div class="footer">
+  <div>
+    Two-beer totals represent one beer for each adult in a family-of-four model.
+  </div>
+
+  <div class="brand">
+    <img
+      src="https://images.squarespace-cdn.com/content/v1/5ff494b9931735466ce28d5b/7802d8f0-0ccd-4e8c-bbc1-63f54120b732/action-logo.png?format=2500w"
+      alt="Action Network"
+    >
+  </div>
+</div>
+
+<script>
+const beerPrices = [
+  ["Boston Celtics","TD Garden",18.27,"bos"],
+  ["Phoenix Suns","Footprint Center",15.85,"phx"],
+  ["Los Angeles Lakers","Crypto.com Arena",14.50,"lal"],
+  ["Milwaukee Bucks","Fiserv Forum",13.71,"mil"],
+  ["New York Knicks","Madison Square Garden",13.50,"ny"],
+  ["Portland Trail Blazers","Moda Center",13.05,"por"],
+  ["Detroit Pistons","Little Caesars Arena",12.99,"det"],
+  ["Cleveland Cavaliers","Rocket Mortgage FieldHouse",12.65,"cle"],
+  ["Minnesota Timberwolves","Target Center",12.65,"min"],
+  ["Houston Rockets","Toyota Center",12.54,"hou"],
+  ["San Antonio Spurs","Frost Bank Center",12.50,"sa"],
+  ["Orlando Magic","Kia Center",11.99,"orl"],
+  ["Denver Nuggets","Ball Arena",11.20,"den"],
+  ["Philadelphia 76ers","Wells Fargo Center",11.03,"phi"],
+  ["Toronto Raptors","Scotiabank Arena",9.67,"tor"],
+  ["Atlanta Hawks","State Farm Arena",7.97,"atl"],
+  ["Oklahoma City Thunder","Paycom Center",7.22,"okc"]
+];
+
+const maxPrice = Math.max(...beerPrices.map(x => x[2]));
+const rows = document.getElementById("beerRows");
+
+beerPrices.forEach(([team, arena, price, abbr], i) => {
+  rows.innerHTML += `
+    <div class="row">
+      <div class="rank">${i + 1}</div>
+      <div class="logo">
+        <img
+          src="https://a.espncdn.com/i/teamlogos/nba/500/${abbr}.png"
+          alt="${team}"
+        >
+      </div>
+      <div class="team">
+        ${team}
+        <span class="arena">${arena}</span>
+      </div>
+      <div class="bar-wrap">
+        <div class="bar-track">
+          <div class="bar" style="width:${(price/maxPrice)*100}%"></div>
+        </div>
+      </div>
+      <div class="price">$${price.toFixed(2)}</div>
+      <div class="two">$${(price*2).toFixed(2)}</div>
+    </div>
+  `;
+});
+</script>
+</section>
+
+</body>
+</html>
