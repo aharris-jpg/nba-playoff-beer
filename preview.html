@@ -16,13 +16,14 @@
 }
 
 .an-playoff-beer{
-  max-width:860px;
+  max-width:750px;
   margin:32px auto;
   background:#fff;
   border:1px solid #E4ECF4;
   border-radius:14px;
   color:#101820;
   box-shadow:0 1px 2px rgba(0,0,0,.04),0 10px 22px rgba(16,80,120,.08);
+  overflow:hidden;
 }
 
 .an-playoff-beer .chart-head{
@@ -32,7 +33,7 @@
 
 .an-playoff-beer h2{
   margin:0 0 6px;
-  font-size:28px;
+  font-size:26px;
   line-height:1.15;
   font-weight:900;
   letter-spacing:-0.4px;
@@ -52,24 +53,31 @@
   background:#00B050;
 }
 
+.an-playoff-beer .chart-scroll{
+  overflow-x:auto;
+  overflow-y:hidden;
+  -webkit-overflow-scrolling:touch;
+}
+
 .an-playoff-beer .table-head,
 .an-playoff-beer .row{
   display:grid;
-  grid-template-columns:42px 42px 220px 1fr 90px 110px;
+  grid-template-columns:38px 38px 190px 190px 90px 100px;
   align-items:center;
+  min-width:646px;
 }
 
 .an-playoff-beer .table-head{
   background:#00150F;
   color:#fff;
-  font-size:11px;
+  font-size:10px;
   font-weight:900;
   text-transform:uppercase;
-  letter-spacing:.7px;
+  letter-spacing:.6px;
 }
 
 .an-playoff-beer .table-head div{
-  padding:12px 10px;
+  padding:11px 8px;
   border-right:1px solid rgba(255,255,255,.15);
 }
 
@@ -82,31 +90,31 @@
 }
 
 .an-playoff-beer .row{
-  min-height:56px;
+  min-height:54px;
   border-bottom:1px solid #E5ECE7;
 }
 
 .an-playoff-beer .row > div{
-  padding:8px 10px;
+  padding:8px;
 }
 
 .an-playoff-beer .rank{
   text-align:center;
   color:#00B050;
   font-weight:900;
-  font-size:15px;
+  font-size:14px;
 }
 
 .an-playoff-beer .logo img{
-  width:28px;
-  height:28px;
+  width:26px;
+  height:26px;
   object-fit:contain;
   display:block;
 }
 
 .an-playoff-beer .team{
   font-weight:800;
-  font-size:14px;
+  font-size:13px;
   line-height:1.2;
 }
 
@@ -114,12 +122,12 @@
   display:block;
   margin-top:2px;
   color:#6E7480;
-  font-size:12px;
+  font-size:11px;
   font-weight:500;
 }
 
 .an-playoff-beer .bar-track{
-  height:16px;
+  height:15px;
   background:#EFF5F0;
   border-radius:3px;
   overflow:hidden;
@@ -134,6 +142,7 @@
 .an-playoff-beer .two{
   text-align:right;
   font-weight:800;
+  font-size:13px;
   font-variant-numeric:tabular-nums;
 }
 
@@ -158,37 +167,33 @@
 }
 
 .an-playoff-beer .brand img{
-  height:34px;
+  height:32px;
   width:auto;
   display:block;
 }
 
 @media(max-width:760px){
-  .an-playoff-beer .table-head{
-    display:none;
+  .an-playoff-beer{
+    margin:24px auto;
+    border-radius:12px;
   }
 
-  .an-playoff-beer .row{
-    grid-template-columns:32px 34px 1fr 80px;
-    gap:6px;
-  }
-
-  .an-playoff-beer .bar-wrap{
-    grid-column:3 / 5;
-    padding-top:0;
-  }
-
-  .an-playoff-beer .two{
-    display:none;
+  .an-playoff-beer .chart-head{
+    padding:18px 18px 14px;
   }
 
   .an-playoff-beer h2{
     font-size:22px;
   }
 
+  .an-playoff-beer .method{
+    margin:14px 16px 0;
+  }
+
   .an-playoff-beer .footer{
     flex-direction:column;
     align-items:flex-start;
+    padding:14px 16px 18px;
   }
 
   .an-playoff-beer .brand img{
@@ -205,16 +210,18 @@
   <div class="green-rule"></div>
 </div>
 
-<div class="table-head">
-  <div>#</div>
-  <div></div>
-  <div>Team / Arena</div>
-  <div>Playoff Price (16 oz)</div>
-  <div>Beer</div>
-  <div>Two Beers</div>
-</div>
+<div class="chart-scroll">
+  <div class="table-head">
+    <div>#</div>
+    <div></div>
+    <div>Team / Arena</div>
+    <div>Playoff Price</div>
+    <div>One Beer</div>
+    <div>Two Beers</div>
+  </div>
 
-<div class="rows" id="beerRows"></div>
+  <div class="rows" id="beerRows"></div>
+</div>
 
 <div class="method">
   <strong>Methodology:</strong>
